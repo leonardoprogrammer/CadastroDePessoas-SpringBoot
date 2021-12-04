@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="hhtp://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>
+        Cadastro de Pessoas
+    </title>
+</head>
+<body>
+    <h1>Opções:</h1>
+    <h3><a href="/cadastrarPessoa">Cadastrar pessoa</a></h3>
+    <h3><a href="/cadastrarContato">Cadastrar contato</a></h3>
+
+    <table>
+        <tbody>
+            <tr th:each="pessoa : ${pessoas}">
+                <td><span th:text="${pessoa.nome}"></span></td>
+                <td><span th:text="${pessoa.cpf}"></span></td>
+                <td><span th:text="${pessoa.dataNascimento}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <tbody>
+        <tr th:each="contato : ${contatos}">
+            <td><span th:text="${contato.idPessoa}"></span></td>
+            <td><span th:text="${contato.nome}"></span></td>
+            <td><span th:text="${contato.telefone}"></span></td>
+            <td><span th:text="${contato.email}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
